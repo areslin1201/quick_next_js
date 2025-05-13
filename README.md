@@ -15,3 +15,10 @@ start
 ```bash
 yarn dev
 ```
+
+## need
+eslint
+prettier
+i18n
+storybook
+redux
