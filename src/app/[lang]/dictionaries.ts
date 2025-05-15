@@ -1,4 +1,3 @@
-import 'server-only';
 import { LangTypes } from '@/types/lang';
 
 const dictionaries = {

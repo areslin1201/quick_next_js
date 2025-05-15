@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { LangTypes } from '@/types/lang';
 import { LOCALE_LANG } from '@/constants/lang';
 import { getDictionary } from './dictionaries';
+import ReduxDemo from './ReduxDemo';
 
 export default async function Home({ params }: { params: Promise<{ lang: LangTypes }> }) {
   const { lang } = await params;
@@ -19,6 +20,7 @@ export default async function Home({ params }: { params: Promise<{ lang: LangTyp
           </Link>
         ))}
       </div>
+      <ReduxDemo />
     </div>
   );
 }

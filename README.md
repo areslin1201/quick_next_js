@@ -10,23 +10,16 @@
 ## Getting Started
 
 install
-
 ```bash
 yarn install
 ```
 
 start
-
 ```bash
 yarn dev
 ```
 
-## Need
-
-eslint
-
-prettier
-
+## prettier
 ```bash
 yarn add --dev prettier
 ```
@@ -41,3 +34,42 @@ Next.js [Internationalization](https://nextjs.org/docs/app/building-your-applica
 
 ### How to set default language?
 1. in `app/src/middleware.ts`, find the variable `defaultLocale` and change it to the specified language.
+
+
+## Redux
+Next.js [Redux](https://redux.js.org/usage/nextjs)
+
+### How to install
+install required packages
+```bash
+yarn add react-redux @reduxjs/toolkit
+```
+
+### How to use
+create a new slice
+1. Add a new feature entry. in `src/redux/features/...`.
+2. Add reducer in `src/redux/store.ts`.
+
+the simple code
+
+```javascript
+'use client';
+import { useAppSelector, useAppDispatch } from '@/redux/hooks';
+import { increment, decrement } from '@/redux/features/counterSlice';
+
+export default function HomePage() {
+  const count = useAppSelector((state) => state.counter.value);
+  const dispatch = useAppDispatch();
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => dispatch(increment())}>+1</button>
+      <button onClick={() => dispatch(decrement())}>-1</button>
+    </div>
+  );
+}
+```
+
+### Initial Data
+You can initialize the data before the page render, in `src/app/StoreProvider.tsx` to add the initialize function.
