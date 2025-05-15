@@ -1,8 +1,8 @@
 'use client';
 import { useRef, ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import { makeStore, AppStore } from '@/redux/store';
-import { initializeCount } from '@/redux/features/counterSlice';
+import { makeStore, AppStore } from '@/lib/redux/store';
+import { initializeCount } from '@/lib/redux/features/counterSlice';
 
 export default function StoreProvider({ children }: { children: ReactNode }) {
   const storeRef = useRef<AppStore | null>(null);
