@@ -30,7 +30,7 @@ Next.js [Internationalization](https://nextjs.org/docs/app/building-your-applica
 ### How to add a new language?
 1. Go to that folder `app/src/constants/lang.ts`，then add a new constant on the variable `LOCALE_LANG`.
 2. Add new types to the `LangTypes` variable in `app/src/types/lang.d.ts`.
-3. Remember to add the json file for that language. the files are stored in `src/app/[lang]/dictionaries`.
+3. Remember to add the json file for that language. the files are stored in `src/app/lib/dictionaries/data`.
 
 ### How to set default language?
 1. in `app/src/middleware.ts`, find the variable `defaultLocale` and change it to the specified language.
@@ -47,15 +47,15 @@ yarn add react-redux @reduxjs/toolkit
 
 ### How to use
 create a new slice
-1. Add a new feature entry. in `src/redux/features/...`.
-2. Add reducer in `src/redux/store.ts`.
+1. Add a new feature entry. in `src/lib/redux/features/...`.
+2. Add reducer in `src/lib/redux/store.ts`.
 
 the simple code
 
 ```javascript
 'use client';
-import { useAppSelector, useAppDispatch } from '@/redux/hooks';
-import { increment, decrement } from '@/redux/features/counterSlice';
+import { useAppSelector, useAppDispatch } from '@/lib/redux/hooks';
+import { increment, decrement } from '@/lib/redux/features/counterSlice';
 
 export default function HomePage() {
   const count = useAppSelector((state) => state.counter.value);
